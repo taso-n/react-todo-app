@@ -7,14 +7,14 @@ const Notes = (props)  => {
         <div>
           {props.notes && props.notes.map((key, index) => 
 
-          <div className="container" style={containerStyle}>
+          <div className="container" style={containerStyle} key={index}>
             <div style = {noteStyle} className="input-group mb-3">
               <div className="input-group-prepend">
                 <div className="input-group-text">
                   <input type="checkbox" aria-label="Checkbox for following text input"/>
                 </div>
               </div>
-              <input type="text" class="form-control" aria-label="Text input with checkbox" 
+              <input type="text" className="form-control" aria-label="Text input with checkbox" 
                      readOnly value={key}/>
             </div>
             <button id="delete"
