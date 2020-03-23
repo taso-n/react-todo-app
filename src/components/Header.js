@@ -2,12 +2,11 @@ import React from 'react';
 
 function Header() {
     return(
-        <h2 style={headerStyle}>ToDo List</h2>
+        <h1 style={headerStyle}>ToDo List</h1>
     )
 }
 
 const headerStyle = {
-    color: 'blue',
     textAligin: 'center',
     fontFamily: 'monospace',
     marginBottom: '50px'
