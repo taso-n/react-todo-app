@@ -11,36 +11,44 @@ function App() {
   
   const handleClick = (e) => {
     e.preventDefault()
-    //console.log({note});
-    setNotesList(notesList => [...notesList, note])
+    if(note !== ""){
+      setNotesList(notesList => [...notesList, note])
+    }
+    setNote("");
   }
 
   const handleChange = (e) => {
     setNote(e.target.value)
   }
 
-  const handleDelete = (itemToDelete) =>{
+  const handleDelete = (itemToDelete) => {
     const id = notesList.indexOf(itemToDelete)
     setNotesList(notesList => notesList.filter((key, index) => index !== id))
   }
+  const handleKeyPress = (e) => {
+    if(e.key === "Enter"){
+      handleClick(e)
+    }
+  } 
 
   return (
     <div className="App">
       <Header/> 
-      <div className="input">
+      <form className="input">
         <input
             id="note"
             type="text"
             className="form-control"
             value={note}
             placeholder="Add new note"
+            onKeyPress = {handleKeyPress}
             onChange={handleChange}/>
         <button
             id="add"
             type="button" 
             className="add-new-note btn btn-warning" 
             onClick={handleClick}>+</button>
-      </div>     
+      </form>     
       <Notes notes={notesList} delete={handleDelete}/>
     </div>
   );
