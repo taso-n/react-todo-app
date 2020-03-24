@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Notes = (props)  => {    
 
@@ -20,7 +19,7 @@ const Notes = (props)  => {
             <button id="delete"
                     type="button"
                     className="btn btn-danger"
-                    onClick={props.delete.bind(this, key)}
+                    onClick={() => props.delete(key)}
                     style={btnStyle}>X</button>
           </div>
           )}
@@ -32,6 +31,7 @@ const Notes = (props)  => {
   const noteStyle = {
     marginTop: 20,
     width: '100%', 
+    zIndex: 1,
     right: 15
   }
 
@@ -47,6 +47,7 @@ const Notes = (props)  => {
     borderRadius: 35,
     textAlign: 'center',
     position: 'absolute',
+    zIndex: 2,
     right: 0,
     top: 18
   }
