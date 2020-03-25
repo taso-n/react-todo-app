@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Header() {
-    return(
+const Header = () => 
+    
         <h1 style={headerStyle}>ToDo List</h1>
-    )
-}
-
+    
 const headerStyle = {
     textAligin: 'center',
     fontFamily: 'monospace',
